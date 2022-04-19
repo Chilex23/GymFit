@@ -1,0 +1,34 @@
+.footer {
+    background-color: black;
+
+    grid-column: full-start / full-end;
+    grid-row: 8 / 9;
+    padding: 5rem 0;
+
+    @include tab {
+        padding: 2rem 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            justify-items: center;
+            align-items: center;
+        }
+
+        @include tab {
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+    }
+}

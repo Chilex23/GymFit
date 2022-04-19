@@ -1,0 +1,165 @@
+%heading {
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 5rem;
+    font-weight: 900;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+
+    @include tab {
+        font-size: 4rem;
+    }
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 3.5rem;
+    line-height: 1;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 3rem;
+    line-height: 1;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+}
+
+.heading-5 {
+    @extend %heading;
+    font-size: 2.5rem;
+    line-height: 1;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+}
+
+.heading-6 {
+    @extend %heading;
+    font-size: 2rem;
+
+    &--dark {
+        color: $color-secondary-dark;
+    }
+}
+
+.text-lg {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.text-bold {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.text-light {
+    font-size: 1.6rem;
+}
+
+.btn {
+    border: 2px solid #fff;
+    border-radius: 0;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &--light {
+        border: 2px solid #fff;
+        border-radius: 0;
+        background-color: #fff;
+        color: $color-secondary;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 1rem 2.5rem;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    &--blue {
+        border: 2px solid $color-secondary;
+        border-radius: 0;
+        background-color: $color-secondary;
+        color: #fff;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 1rem 2.5rem;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    &--outline-blue {
+        border: 2px solid $color-secondary;
+        border-radius: 0;
+        background-color: transparent;
+        color: $color-secondary;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        padding: 1rem 2.5rem;
+        cursor: pointer;
+        transition: all .2s;
+    }
+}
+
+@mixin hover-white {
+    background-color: #fff;
+    color: $color-secondary;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    @include hover-white;
+}
+
+.btn--light:hover {
+    background-color: $color-secondary;
+    color: #fff;
+    border: 2px solid transparent;
+}
+
+.btn--blue:hover {
+    @include hover-white;
+}
+
+.btn--outline-blue:hover {
+    background-color: $color-secondary;
+    color: #fff;
+    border: 2px solid transparent;
+}
+
+.u-mb-lg {margin-bottom: 4rem;}
+.u-mb-md {margin-bottom: 2rem;}
+.u-mb-sm {margin-bottom: 1rem;}
+
+.u-mt-lg {margin-top: 4rem;}
+.u-mt-md {margin-top: 2rem;}
+.u-mt-sm {margin-top: 1rem;}
+
+.u-me-lg {margin-right: 4rem;}
+.u-me-md {margin-right: 2rem;}
+.u-me-sm {margin-right: 1rem;}

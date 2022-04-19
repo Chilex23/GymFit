@@ -1,0 +1,24 @@
+.logo {
+    background-color: $color-primary;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: max-content;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+
+    i {
+        font-size: 3rem;
+        color: $color-secondary;
+    }
+
+    p {
+        font-size: 1.6rem;
+        color: $color-grey-light;
+    }
+
+    @include tab {
+        display: none;
+    }
+}

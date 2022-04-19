@@ -1,0 +1,85 @@
+//COLOR VARIABLES
+$color-primary: #000;
+
+$color-secondary: #1f7a8c;
+$color-secondary-dark: #081d21;
+
+$color-grey-light: #d8d4f2;
+$color-grey-dark: #707070;
+
+//BREAKPOINTS
+$bp-largest: 68.75em; // 1100px
+$bp-large: 47.5em; // 760px
+$bp-medium: 37.5em; //600px
+$bp-small: 31.25em; // 500px
+
+@mixin desktop-lg {
+    @media only screen and (max-width: #{$bp-largest}) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media only screen and (max-width: #{$bp-large}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (max-width: #{$bp-medium}) {
+        @content;
+    }
+}
+
+@mixin phone-sm {
+    @media only screen and (max-width: #{$bp-small}) {
+        @content;
+    }
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 16/10 
+    box-sizing: border-box;
+
+    @include desktop-lg {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 15rem min-content 70vh repeat(5, min-content);
+    grid-template-columns: [full-start] 10rem [center-start] repeat(7, [col-start] minmax(6rem, 1fr) [col-end]) [center-end] 10rem [full-end];
+    overflow: clip;
+
+    @include desktop-lg {
+        grid-template-rows: 15rem min-content 60vh repeat(5, min-content);
+    }
+
+    @include tab {
+        grid-template-columns: [full-start] 1fr [center-start] repeat(7, [col-start] minmax(2rem, 1fr) [col-end]) [center-end] 1fr [full-end];
+        grid-template-rows: min-content 60vh repeat(5, min-content);
+    }
+
+}
+
+@mixin grid-center {
+    justify-self: center;
+    align-self: center;
+}
