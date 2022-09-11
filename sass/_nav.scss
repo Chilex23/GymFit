@@ -1,9 +1,85 @@
+.active {
+    background-color: green;
+    color: white;
+}
 .nav {
     background-color: $color-secondary;
     grid-column: full-start / full-end;
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: repeat(7, minmax(5rem, 1fr));
+    position: sticky;
+    top: 0;
+
+    @include tab {
+        height: 8rem;
+    }
+
+    &__logo {
+        position: relative;
+        left: 10rem;
+        top: 2rem;
+        display: none;
+
+        @include tab {
+            display: block;
+        }
+
+        & img {
+            width: 20rem;
+        }
+    }
+
+    &__icon {
+        font-size: 3rem;
+        position: absolute;
+        top: 2.1rem;
+        left: 2rem;
+        display: none !important;
+
+        @include tab {
+            display: block !important;
+        }
+    }
+
+    &__side-bar {
+        position: fixed;
+        top: 7.1rem;
+        width: 30rem;
+        height: 100vh;
+        font-size: 2rem;
+        background-color: $color-secondary;
+        color: #fff;
+        z-index: 1000;
+        padding: 1.5rem;
+        backdrop-filter: blur(20px);
+        display: none;
+        & p {
+            width: 60%;
+        }
+
+        & p:not(:first-child) {
+            margin-top: 3rem;
+        }
+
+        &-dropdown-container {
+            display: none;
+            padding-left: 8px;
+            margin-top: 1rem;
+
+            & a, & a:link, & a:visited {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+        &-dropdown-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 
     &__container {
         list-style: none;
@@ -23,9 +99,38 @@
         width: 100%;
         height: 100%;
         text-align: center;
+        position: relative;
 
         @include tab {
-            opacity: 0;
+           display: none;
+           height: 2rem;
+        }
+    }
+
+    &__dropdown-content {
+        display: none;
+        position: absolute;
+        top: 4.6rem;
+        left: -1rem;
+        background-color: $color-primary;
+        color: #fff;
+        min-width: 160px;
+        border-top: 3px solid $color-secondary;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        transition: all .4s ease-in;
+        animation: slideUp .4s;
+
+        & a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        & a:hover {
+            background-color: #ddd;
+            color: black;
         }
     }
 
@@ -33,7 +138,21 @@
         background-color: $color-secondary-dark;
     }
 
+    &__link:hover &__dropdown-content {
+        display: block;
+    }
+
     @include tab {
         grid-row: 1 / 2;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }

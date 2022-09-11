@@ -20,6 +20,8 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(min-content, 1fr));
         column-gap: 2rem;
+        position: relative;
+        z-index: -10;
 
         @include phone {
             grid-template-columns: max-content;
